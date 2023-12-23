@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+#chat {
+    overflow: hidden;
+}
+
+.textbox {
+    height: 80vh;
+    width: 90vw;
+    overflow-y: auto;
+    background-color: #FFFFFF;
+    margin: 20px auto;
+    border: black 2px solid;
+    border-radius: 1rem;
+}
+
+#chat ul {
+    list-style-type: none;
+}
+
+#chat ul li {
+    margin: 40px 0;
+}
+
+#chat ul li .me-5 {
+    margin-right: 6rem !important;
+}
+
+#chat .current-user {
+    color: #3559E0;
+
+}
+
+#chat .ms-5 {
+    margin-left: 71px !important;
+}

@@ -1,0 +1,28 @@
+<div id="chat">
+    <h1 class="text-center">Welcome to chat</h1>
+    <div class="textbox">
+        <ul class="ms-5">
+            <li *ngFor="let message of signalrService.messages">
+                <p class="text-end me-5 current-user"
+                    *ngIf="message.Username === currentUserMessage.Username; else otherUser">
+                    {{ message.Username }} (You): {{ message.Message }}
+                </p>
+                <ng-template #otherUser>
+                    {{ message.Username }}: {{ message.Message }}
+                </ng-template>
+            </li>
+        </ul>
+    </div>
+    <form class="row g-3 ms-5">
+        <div class="col-sm-10">
+            <input type="text" class="form-control" [(ngModel)]="currentUserMessage.Message" id="privateMessage"
+                name="privateMessage" placeholder="Enter your message">
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3"
+                [disabled]="!currentUserMessage.Message || !currentUserMessage.Username"
+                (click)="signalrService.sendMessage(currentUserMessage)">Send
+                Message</button>
+        </div>
+    </form>
+</div>

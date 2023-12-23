@@ -1,0 +1,12 @@
+<form class="m-5">
+    <div class="mb-3">
+        <label for="login" class="form-label">Login:</label>
+        <input type="text" name="login" class="form-control" id="login" placeholder="Enter your login"
+            [(ngModel)]="currentPrivateMessage.Username">
+    </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+        <button type="button" [disabled]="!currentPrivateMessage.Username" class="btn btn-primary"
+            (click)="onSignedInClick()">Sign in</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="onNoClick()">Close</button>
+    </div>
+</form>
